@@ -1,6 +1,0 @@
----
-readable_by: '*'
-layout: system/view-app.html
-private: true
-title: View Application
----

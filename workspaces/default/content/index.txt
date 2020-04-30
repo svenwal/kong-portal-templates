@@ -1,8 +1,10 @@
----
-layout: homepage.html
-title: Home
+  ---
+  layout: home.html
 
-hero:
-  title: Built with Kong
-  tagline: Empowering developers across the globe.
----
+  title: No WS
+
+  hero:
+    title: Making Data YEET.
+
+  body: wow much website
+  ---
