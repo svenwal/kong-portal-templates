@@ -1,7 +1,12 @@
+
+<h2>{{ ws_name }}</h2>
 <div class="catalog-list">
   {% if #specs > 0 then %}
     {% for _, spec in each(specs) do %}
-      {(partials/service-catalog/item.html, spec)}
+      {% local context = {} %}
+      {% context.spec = spec %}
+      {% context.ws_name = ws_name %}
+      {(partials/service-catalog/item.html, context)}
     {% end %}
   {% else %}
     <div class="catalog-list__no-results">

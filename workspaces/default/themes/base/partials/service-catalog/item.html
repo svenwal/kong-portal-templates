@@ -1,24 +1,24 @@
 <a
-  href="{{string.sub(route, 2)}}"
-  data-tags="{% for _, tag in pairs(parsed.tags or {}) do %}{{tag.name:lower()}},{% end %}"
+  href="{{'/' .. ws_name .. '/' .. string.sub(spec.route, 2)}}"
+  data-tags="{% for _, tag in pairs(spec.parsed.tags or {}) do %}{{tag.name:lower()}},{% end %}"
   class="catalog-item toggle-content is-visible">
   <div class="catalog-logo">
-    {{parsed.info.title:sub(0,2)}}
+    {{spec.parsed.info.title:sub(0,2)}}
   </div>
 
   <div class="catalog-details">
-    <h5 class="catalog-title">{{parsed.info.title}}</h5>
+    <h5 class="catalog-title">{{spec.parsed.info.title}}</h5>
 
-    {% if parsed.info.description then %}
-      <p class="catalog-desc">{{parsed.info.description}}</p>
+    {% if spec.parsed.info.description then %}
+      <p class="catalog-desc">{{spec.parsed.info.description}}</p>
     {% end %}
 
-    {% if parsed.info.version then %}
-      <small class="catalog-version">v{{parsed.info.version}}</small>
+    {% if spec.parsed.info.version then %}
+      <small class="catalog-version">v{{spec.parsed.info.version}}</small>
     {% end %}
 
-    {% if tags then %}
-      {% for _, tag in each(tags) do %}
+    {% if spec.tags then %}
+      {% for _, tag in each(spec.tags) do %}
         <small class="catalog-tag">{{tag.name}}</small>
       {% end %}
     {% end %}
